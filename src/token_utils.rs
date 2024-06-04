@@ -1,9 +1,9 @@
 
-use core::ops::Add;
+// use core::ops::Add;
 
 use soroban_sdk::{Address, Env, log};
 
-use crate::{token, storage_types::INSTANCE_BUMP_AMOUNT};
+use crate::{token};
 
 pub fn balance(e: &Env, token: &Address, id: &Address) -> i128 {
     token::Client::new(e, token).balance(id)

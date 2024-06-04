@@ -10,7 +10,7 @@ use crate::lease::{has_lease, load_lease, remove_lease, write_lease,
 use crate::storage_types::{LeaseState, Leasing, LeasingRenting, Renting, INSTANCE_LIFETIME_THRESHOLD, INSTANCE_BUMP_AMOUNT};
 use crate::token_utils::{balance, clawback, get_allowance, make_admin, mint, set_authorized, set_unauthorized, transfer_from};
 
-use soroban_sdk::{contractimpl, contract, Address, Env, BytesN, log, IntoVal, Vec};
+use soroban_sdk::{contractimpl, contract, Address, Env, BytesN, log, Vec};
 
 #[contract]
 pub struct SetLien;

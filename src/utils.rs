@@ -1,4 +1,4 @@
-#![no_std]
+// #![no_std]
 
 use crate::storage_types::DataKey;
 use soroban_sdk::{Env};
