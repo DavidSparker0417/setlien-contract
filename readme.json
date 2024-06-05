@@ -1,3 +1,27 @@
 {
-  "build": "soroban contract build"
+  "install": {
+    "soroban-cli": "cargo install --locked soroban-cli --version 21.0.0-preview.1"
+  },
+  "build": "soroban contract build",
+  "deploy": {
+    "cmd": "soroban contract deploy --wasm target/wasm32-unknown-unknown/release/setlien.wasm --source admin --network Testnet",
+    "deployed": {
+      "Testnet": "CBO2ZJQGKWUY4W5K2DSZLKEDDTB6G4JLXJMDWUEVGMSXOHREULMG67GT",
+      "Futurenet": "CBAX3MOTSERDRWAJ6Y7NAVR2JVN3XMPAASUDX5P2BHJNXY3HJSNJ6SY3",
+      "Punet": "CBAX3MOTSERDRWAJ6Y7NAVR2JVN3XMPAASUDX5P2BHJNXY3HJSNJ6SY3"
+    }
+  },
+  "paymentToken": {
+    "Testnet": {
+      "name": "USDC",
+      "issuer": "GBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5",
+      "wrapped": "CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA"
+    },
+    "Pubnet": {
+      "name": "USDC",
+      "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+      "wrapped": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+    }
+  },
+  "init": "soroban contract invoke --id CBO2ZJQGKWUY4W5K2DSZLKEDDTB6G4JLXJMDWUEVGMSXOHREULMG67GT --source admin --network Testnet -- initialize --_admin $(soroban keys address admin) --_paymant_token CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA"
 }
